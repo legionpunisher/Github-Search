@@ -11,7 +11,7 @@ import {Repohub}from '../repohub';
   providedIn: 'root'
 })
 export class ProfileService {
-  userhubs: Userhub[] = [];
+  hubuser: Userhub[] = [];
   repohubs: Repohub;
 
   constructor(private http: HttpClient) { }
@@ -25,5 +25,21 @@ export class ProfileService {
       name: string;
       url: string;
     }
-  constructor() { }
+    let promise = new Promise((resolve, reject) => {
+
+      this.http.get<data>('https://api.github.com/users/' + searchTerm + '?access_token=' + environment.access_token).toPromise().then(
+        (results) => {
+          this.hubuser = [];
+          this.hubuser.push(results);
+          console.log(results)
+          resolve()
+        },
+        (error) => {
+          console.log(error)
+          reject()
+        }
+      )
+    })
+    return promise;
+  }
 }
