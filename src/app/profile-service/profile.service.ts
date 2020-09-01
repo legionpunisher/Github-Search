@@ -11,6 +11,19 @@ import {Repohub}from '../repohub';
   providedIn: 'root'
 })
 export class ProfileService {
+  userhubs: Userhub[] = [];
+  repohubs: Repohub;
 
+  constructor(private http: HttpClient) { }
+
+  searchGithub(searchTerm: string) {
+    interface data {
+      login: string;
+      username: string;
+      avatar: string;
+      html_url: string;
+      name: string;
+      url: string;
+    }
   constructor() { }
 }
