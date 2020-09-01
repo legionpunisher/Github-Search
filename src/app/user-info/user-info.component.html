@@ -1,43 +1,47 @@
-<h1 style="text-align:center">
-    <u>GITLIFY </u></h1>
-<p id="info" class="text-center"><u>QUICK ACCESS TO GITHUB USERNAME AND REPOSITORIES</u></p>
-<div class="form">
-    <app-user-form (emitSearch)="searchProfile($event)"></app-user-form>
-</div>
-<div class="container">
-    <div>
-        <h4 class="text-center"><u>AVATAR</u></h4>
-        <div *ngFor="let hubusers of hubuser">
-            <div class="text-center">
-                <img src="{{hubusers.avatar_url}}" width="300" height="300">
+<div class="body">
+    <h1 style="text-align:center">
+        <u>GITLIFY </u></h1>
+    <p id="info" class="text-center"><u>QUICK ACCESS TO GITHUB USERNAME AND REPOSITORIES</u></p>
+    <div class="form">
+        <app-user-form (emitSearch)="searchProfile($event)"></app-user-form>
+    </div>
+    <div class="container">
+        <div>
+            <h4 class="text-center"><u>AVATAR</u></h4>
+            <div *ngFor="let hubusers of hubuser">
+                <div class="text-center">
+                    <img src="{{hubusers.avatar_url}}" width="300" height="300">
 
 
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="my-6">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card" style="width: 70rem;">
+                    <div class="card-header">
+                        <h4 class="text-center">USER PROFILE</h4>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <div *ngFor="let hubusers of hubuser">
+                            <div>
+                                <li style="text-align:center" class="list-group-item">USER NAME: &nbsp; {{hubusers.name}}</li>
+                                <li style="text-align:center" class="list-group-item">Email: &nbsp; {{hubusers.email}}</li>
+                                <li style="text-align:center" class="list-group-item">Repositories:&nbsp; {{hubusers.public_repos}}</li>
+                                <li style="text-align:center" class="list-group-item">Followers:&nbsp; {{hubusers.followers}}</li>
+                                <li style="text-align:center" class="list-group-item">Following:&nbsp;{{hubusers.following}}</li>
+                                <li style="text-align:center" class="list-group-item">Location:&nbsp;{{hubusers.location}}</li>
+                                <li style="text-align:center" class="list-group-item"> Date:&nbsp; {{hubusers.created_at |date}}</li>
+                                <li style="text-align:center" class="list-group-item"><a href="{{hubusers.html_url}}" target="_blank"><button type="button" class=" text-center btn btn-info">
+                  <i class="far fa-user pr-2" aria-hidden="true"></i>View Profile on Github</button></a><br></li>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
 </div>
-<hr class="my-6">
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="card" style="width: 70rem;">
-                <div class="card-header">
-                    <h4 class="text-center">USER PROFILE</h4>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <div *ngFor="let hubusers of hubuser">
-                        <div>
-                            <li style="text-align:center" class="list-group-item">USER NAME: &nbsp; {{hubusers.name}}</li>
-                            <li style="text-align:center" class="list-group-item">Email: &nbsp; {{hubusers.email}}</li>
-                            <li style="text-align:center" class="list-group-item">Repositories:&nbsp; {{hubusers.public_repos}}</li>
-                            <li style="text-align:center" class="list-group-item">Followers:&nbsp; {{hubusers.followers}}</li>
-                            <li style="text-align:center" class="list-group-item">Following:&nbsp;{{hubusers.following}}</li>
-                            <li style="text-align:center" class="list-group-item">Location:&nbsp;{{hubusers.location}}</li>
-                            <li style="text-align:center" class="list-group-item"> Date:&nbsp; {{hubusers.created_at |date}}</li>
-                            <li style="text-align:center" class="list-group-item"><a href="{{hubusers.html_url}}" target="_blank"><button type="button" class=" text-center btn btn-info">
-                  <i class="far fa-user pr-2" aria-hidden="true"></i>View Profile on Github</button></a><br></li>
-                        </div>
-                    </div>
-                </ul>
-            </div>
-        </div>
