@@ -28,7 +28,7 @@
                                 <li class="list-group-item">Following:&nbsp;{{hubusers.following}}</li>
                                 <li class="list-group-item">Location:&nbsp;{{hubusers.location}}</li>
                                 <li class="list-group-item">Join Date:&nbsp; {{hubusers.created_at |date}}</li>
-                                <li class="list-group-item"><a href="{{github.html_url}}" target="_blank"><button type="button" class=" text-center btn btn-info">
+                                <li class="list-group-item"><a href="{{hubusers.html_url}}" target="_blank"><button type="button" class=" text-center btn btn-info">
                   <i class="far fa-user pr-2" aria-hidden="true"></i>View Profile on Github</button></a><br></li>
                             </div>
                         </div>
@@ -40,9 +40,9 @@
                     <h4 class="text-center">PROFILE IMAGE</h4>
                     <div class="container">
                         <div>
-                            <div *ngFor="let userhubs of hubuser">
+                            <div *ngFor="let hubusers of hubuser">
                                 <div class="text-center">
-                                    <img src="{{github.avatar_url}}" width="300" height="300">
+                                    <img src="{{hubusers.avatar_url}}" width="300" height="300">
                                     <br> <br>
                                 </div>
                             </div>
