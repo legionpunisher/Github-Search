@@ -44,3 +44,6 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# access_token
+access_token: "52fb3a2e7a73894c421f5ccf75c9d5f39ff5e4ad"
