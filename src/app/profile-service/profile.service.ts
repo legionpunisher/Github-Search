@@ -16,7 +16,7 @@ export class ProfileService {
 
   constructor(private http: HttpClient) { }
 
-  searchGithub(searchTerm: string) {
+  searchUserhub(searchDetail: string) {
     interface data {
       login: string;
       username: string;
@@ -27,7 +27,7 @@ export class ProfileService {
     }
     let promise = new Promise((resolve, reject) => {
 
-      this.http.get<data>('https://api.github.com/users/' + searchTerm + '?access_token=' + environment.access_token).toPromise().then(
+      this.http.get<data>('https://api.github.com/users/' + searchDetail + '?access_token=' + environment.access_token).toPromise().then(
         (results) => {
           this.hubuser = [];
           this.hubuser.push(results);
