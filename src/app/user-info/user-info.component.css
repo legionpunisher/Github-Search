@@ -1,0 +1,15 @@
+.form {
+    text-align: center;
+    border: 15px solid green;
+    margin: 20px;
+    width: 500px;
+    padding: 50px;
+    background-color: cornsilk;
+}
+
+#info {
+    font-weight: 500;
+    font-size: 1.5em;
+    font-style: italic;
+    font-weight: bold;
+}

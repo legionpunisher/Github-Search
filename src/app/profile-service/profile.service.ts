@@ -18,7 +18,7 @@ export class ProfileService {
 
   searchUserhub(searchDetail: string) {
     interface data {
-      login: string;
+      Email: string;
       username: string;
       avatar: string;
       html_url: string;
